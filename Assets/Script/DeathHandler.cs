@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class DeathHandler : MonoBehaviour
 {
-    [SerializeField] Canvas gameOverCanvas;
+    [SerializeField] Canvas _gameOverCanvas;
 
     private void Start()
     {
-        gameOverCanvas.enabled = false;
+        _gameOverCanvas.enabled = false;
     }
 
     public void HandleDeath()
     {
-        gameOverCanvas.enabled = true;
+        _gameOverCanvas.enabled = true;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
