@@ -11,6 +11,7 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] float _zoomInFov = 20;
     [SerializeField] float _zoomOutSensitivity = 1;
     [SerializeField] float _zoomInSensitivity = 0.5f;
+    
 
     private FirstPersonController _firstPersonController;
     bool zoomedInToggle = false;

@@ -13,7 +13,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] float _damage = 30f;
     [SerializeField] ParticleSystem _muzzleFlash;
     [SerializeField] GameObject _hitEffect;
+    [SerializeField] Ammo _ammoSlot;
     private StarterAssetsInputs _starterAssetsInputs;
+    
     private void Awake()
     {
         _starterAssetsInputs = FindObjectOfType<StarterAssetsInputs>();
@@ -23,16 +25,20 @@ public class Weapon : MonoBehaviour
     {
         if (_starterAssetsInputs.shoot)
         {
-            Shoot();
-            _starterAssetsInputs.shoot = false;
+           Shoot();
+           _starterAssetsInputs.shoot = false;
         }
         
     }
 
     public void Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRaycast();
+        if (_ammoSlot.GetCurrentAmmo() > 0)
+        {
+            PlayMuzzleFlash();
+            ProcessRaycast();
+            _ammoSlot.ReduceCurrentAmmo();
+        }
     }
 
     private void PlayMuzzleFlash()
