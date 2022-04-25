@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 1692501623814213306}
   - component: {fileID: 7030730173727394221}
   - component: {fileID: 1689820347096756571}
+  - component: {fileID: 2054091318029782566}
   m_Layer: 0
   m_Name: Belgian AssaultRifle
   m_TagString: Untagged
@@ -224,10 +225,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee13bec07302b4eb1c9e4c59b833d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FPCamera: {fileID: 0}
+  FPCamera: {fileID: 5729945779781291691, guid: d22c6dba2f509074f92638ebc0de865c, type: 3}
   _range: 100
-  _damage: 30
+  _damage: 24
   _muzzleFlash: {fileID: 6863636179499312125}
+  _hitEffect: {fileID: 6572976138867427479, guid: 1f21a575dfb9ee64382427cfd2f11f7c, type: 3}
+  _ammoSlot: {fileID: 72815293323413075, guid: 4f78974a8f77ddb45b0c146cddd9b5e7, type: 3}
+  _timeBetweenShoots: 0.5
+--- !u!114 &2054091318029782566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690607763601192528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9b04959d8ab8147bf82c46472e33fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraFOV: {fileID: 0}
+  _zoomOutFov: 40
+  _zoomInFov: 20
+  _zoomOutSensitivity: 1
+  _zoomInSensitivity: 0.5
 --- !u!1 &1690842805093866070
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class WeaponZoom : MonoBehaviour
 
     void Start()
     {
-        _firstPersonController = GetComponent<FirstPersonController>();   
+        _firstPersonController = FindObjectOfType<FirstPersonController>();   
     }
     void Update()
     {
