@@ -314,6 +314,7 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
   _hitEffect: {fileID: 6572976138867427479, guid: 1f21a575dfb9ee64382427cfd2f11f7c, type: 3}
   _ammoSlot: {fileID: 0}
+  _ammoType: 0
   _timeBetweenShoots: 1
 --- !u!114 &3133488679470315476
 MonoBehaviour:
@@ -332,6 +333,7 @@ MonoBehaviour:
   _zoomInFov: 15
   _zoomOutSensitivity: 1
   _zoomInSensitivity: 0.3
+  zoomedInToggle: 0
 --- !u!1 &1233179763907963495
 GameObject:
   m_ObjectHideFlags: 0
