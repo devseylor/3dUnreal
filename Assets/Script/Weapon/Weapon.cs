@@ -14,10 +14,17 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem _muzzleFlash;
     [SerializeField] GameObject _hitEffect;
     [SerializeField] Ammo _ammoSlot;
+    [SerializeField] AmmoType _ammoType;
     [SerializeField] float _timeBetweenShoots;
     private StarterAssetsInputs _starterAssetsInputs;
 
     bool _canShoot = true;
+
+    private void OnEnable()
+    {
+       _canShoot = true;
+    }
+
 
     private void Awake()
     {
@@ -30,18 +37,17 @@ public class Weapon : MonoBehaviour
         {
            StartCoroutine(Shoot());
            _starterAssetsInputs.shoot = false;
-        }
-        
+        }        
     }
 
     IEnumerator Shoot()
     {
         _canShoot = false;
-        if (_ammoSlot.GetCurrentAmmo() > 0)
+        if (_ammoSlot.GetCurrentAmmo(_ammoType) > 0)
         {
             PlayMuzzleFlash();
             ProcessRaycast();
-            _ammoSlot.ReduceCurrentAmmo();
+            _ammoSlot.ReduceCurrentAmmo(_ammoType);
         }
         yield return new WaitForSeconds(_timeBetweenShoots);
         _canShoot = true;

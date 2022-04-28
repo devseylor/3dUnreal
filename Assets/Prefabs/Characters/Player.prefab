@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 72815294499917939}
+  - component: {fileID: 72815293323413076}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -29,9 +30,23 @@ Transform:
   m_Children:
   - {fileID: 75781618067313712}
   - {fileID: 6889065109471964156}
+  - {fileID: 6226887274018350628}
   m_Father: {fileID: 4062304082004688803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &72815293323413076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72815294499917948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ecc3d6c8ab67b49bd7bc1a2472740b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: 0
 --- !u!1 &4062304082004688804
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +434,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f9f6a4b35760349b40ec3b91307a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  _ammoSlots:
+  - _ammoType: 0
+    _ammoAmount: 30
+  - _ammoType: 1
+    _ammoAmount: 7
+  - _ammoType: 0
+    _ammoAmount: 5
 --- !u!1001 &1617288938867645066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -430,7 +451,7 @@ PrefabInstance:
     - target: {fileID: 1689820347096756571, guid: 3fe65ce5d88a16045ae6aa0057c4b0e1, type: 3}
       propertyPath: FPCamera
       value: 
-      objectReference: {fileID: 5729945779781291691, guid: d22c6dba2f509074f92638ebc0de865c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1689820347096756571, guid: 3fe65ce5d88a16045ae6aa0057c4b0e1, type: 3}
       propertyPath: _ammoSlot
       value: 
@@ -446,6 +467,10 @@ PrefabInstance:
     - target: {fileID: 1690607763601192528, guid: 3fe65ce5d88a16045ae6aa0057c4b0e1, type: 3}
       propertyPath: m_Name
       value: Belgian AssaultRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690607763601192528, guid: 3fe65ce5d88a16045ae6aa0057c4b0e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1692501623814213306, guid: 3fe65ce5d88a16045ae6aa0057c4b0e1, type: 3}
       propertyPath: m_RootOrder
@@ -515,6 +540,96 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6863636179499312125, guid: 3fe65ce5d88a16045ae6aa0057c4b0e1, type: 3}
   m_PrefabInstance: {fileID: 1617288938867645066}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5144137847213137927
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 72815294499917939}
+    m_Modifications:
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233167210716566219, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_Name
+      value: British BoltRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233167210716566219, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133488679470315476, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: _cameraFOV
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395438834783452841, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395438834783452841, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: _ammoSlot
+      value: 
+      objectReference: {fileID: 72815293323413075}
+    - target: {fileID: 6395438834783452841, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: _ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395438834783452841, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: _timeBetweenShoots
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782095749965164297, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+--- !u!4 &6226887274018350628 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1227792637139584547, guid: 5034ee8a03ec2db478110565a0c55d5e, type: 3}
+  m_PrefabInstance: {fileID: 5144137847213137927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6887546153741119416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -526,6 +641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: American Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 1364704855717136, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4392049516594244, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -536,11 +655,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392049516594244, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 4392049516594244, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.376
       objectReference: {fileID: 0}
     - target: {fileID: 4392049516594244, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -571,9 +690,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9118425679256637554, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118425679256637554, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
       propertyPath: _ammoSlot
       value: 
       objectReference: {fileID: 72815293323413075}
+    - target: {fileID: 9118425679256637554, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
+      propertyPath: _ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118425679256637554, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
+      propertyPath: _timeBetweenShoots
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd89a223e5b83d94fa54a76c14c9c24d, type: 3}
 --- !u!4 &6889065109471964156 stripped
