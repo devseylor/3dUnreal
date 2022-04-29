@@ -25,7 +25,6 @@ public class Weapon : MonoBehaviour
        _canShoot = true;
     }
 
-
     private void Awake()
     {
         _starterAssetsInputs = FindObjectOfType<StarterAssetsInputs>();
